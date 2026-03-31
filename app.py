@@ -1274,14 +1274,17 @@ if "fin_impact_type" not in st.session_state:
 if "fin_materiality" not in st.session_state:
     st.session_state.fin_materiality = FIN_MATERIALITY_OPTIONS[0]
 if "api_key" not in st.session_state:
-    _env_path = os.path.join(os.path.dirname(__file__), ".env")
-    _saved_key = ""
-    if os.path.exists(_env_path):
-        with open(_env_path) as _f:
-            for _line in _f:
-                if _line.startswith("ANTHROPIC_API_KEY="):
-                    _saved_key = _line.strip().split("=", 1)[1]
-                    break
+    # 1. Streamlit Cloud secrets (injected as env var)
+    _saved_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    # 2. Local .env file fallback
+    if not _saved_key:
+        _env_path = os.path.join(os.path.dirname(__file__), ".env")
+        if os.path.exists(_env_path):
+            with open(_env_path) as _f:
+                for _line in _f:
+                    if _line.startswith("ANTHROPIC_API_KEY="):
+                        _saved_key = _line.strip().split("=", 1)[1]
+                        break
     st.session_state.api_key = _saved_key
 
 
