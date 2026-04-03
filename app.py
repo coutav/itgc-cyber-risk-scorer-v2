@@ -1033,6 +1033,237 @@ st.markdown("""
 
   /* ── Empty state ── */
   .empty-state { text-align:center; color:#2d4270; font-size:0.82rem; padding:28px 0; }
+
+  /* ════════════════════════════════════════════
+     WELCOME SCREEN
+  ════════════════════════════════════════════ */
+  .welcome-page {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .welcome-logo {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 20px #1d4ed860; }
+    50%       { text-shadow: 0 0 40px #3b82f6aa, 0 0 80px #1d4ed840; }
+  }
+  .welcome-badge {
+    display: inline-block;
+    background: #1a3560;
+    color: #5b9cf6;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid #2d5090;
+    margin-bottom: 16px;
+  }
+  .welcome-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #e8edf8;
+    text-align: center;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+  .welcome-sub {
+    font-size: 1.05rem;
+    color: #6b82b0;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0 auto 36px;
+  }
+  .welcome-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 860px;
+    width: 100%;
+    margin-bottom: 36px;
+  }
+  .welcome-feat-card {
+    background: #0e1628;
+    border: 1px solid #1c2d50;
+    border-radius: 14px;
+    padding: 20px 18px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .welcome-feat-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+  }
+  .welcome-feat-icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .welcome-feat-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #c4d4f0;
+    margin-bottom: 6px;
+  }
+  .welcome-feat-desc {
+    font-size: 0.78rem;
+    color: #4a6490;
+    line-height: 1.55;
+  }
+  .welcome-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2563eb, transparent);
+    margin: 0 auto 28px;
+  }
+  .welcome-cta-hint {
+    font-size: 0.8rem;
+    color: #3d5a8a;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* ════════════════════════════════════════════
+     TOUR PANEL
+  ════════════════════════════════════════════ */
+  .tour-panel {
+    background: linear-gradient(135deg, #0d1b3e 0%, #081022 100%);
+    border: 1px solid #2563eb55;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+    padding: 22px 26px 18px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tour-panel::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, #1d4ed815 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .tour-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .tour-step-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tour-step-num {
+    background: #1d4ed8;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  .tour-section-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3d6acc;
+  }
+  .tour-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #e8edf8;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tour-body {
+    font-size: 0.88rem;
+    color: #8ea3c8;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .tour-tip {
+    background: #0b1a35;
+    border: 1px solid #1c3460;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    color: #5b9cf6;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .tour-tip-icon { flex-shrink: 0; font-size: 0.9rem; }
+  .tour-progress-bar {
+    height: 3px;
+    background: #0b1528;
+    border-radius: 3px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .tour-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  .tour-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+  .tour-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .tour-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #1c2d50;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .tour-dot.active { background: #2563eb; transform: scale(1.3); }
+  .tour-dot.done   { background: #1d4ed860; }
+
+  /* Sidebar tour button */
+  .tour-restart-btn {
+    background: #0e1a35 !important;
+    border: 1px solid #1c3460 !important;
+    color: #5b9cf6 !important;
+    font-size: 0.78rem !important;
+    padding: 8px 14px !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    margin-top: 4px;
+    letter-spacing: 0.5px !important;
+  }
+  .tour-restart-btn:hover {
+    border-color: #2563eb !important;
+    background: #112040 !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 
@@ -1286,6 +1517,296 @@ if "api_key" not in st.session_state:
                         _saved_key = _line.strip().split("=", 1)[1]
                         break
     st.session_state.api_key = _saved_key
+
+# ── Guide / tour session state ─────────────────────────────────────────────────
+if "show_welcome" not in st.session_state:
+    st.session_state.show_welcome = True    # show on first load
+if "tour_active" not in st.session_state:
+    st.session_state.tour_active = False
+if "tour_step" not in st.session_state:
+    st.session_state.tour_step = 0
+
+# ── Tour steps definition ──────────────────────────────────────────────────────
+TOUR_STEPS = [
+    {
+        "icon": "🛡️",
+        "section": "Overview",
+        "title": "Welcome to ITGC Risk Scorer v2",
+        "body": (
+            "This tool helps IT auditors at PwC quickly and accurately assess the severity of "
+            "<b>IT General Control (ITGC) findings</b> — the weaknesses found during an audit of "
+            "a company's IT systems.<br><br>"
+            "Instead of relying on gut feel, the scorer combines a trained <b>XGBoost machine-learning "
+            "model</b> with <b>Claude Haiku AI</b> to produce a transparent, explainable risk score "
+            "from 0–100. Every score comes with detailed reasoning so the auditor knows exactly why "
+            "a finding ranked the way it did."
+        ),
+        "tip": "You can restart this tour anytime by clicking 'Take the Tour' in the left sidebar.",
+    },
+    {
+        "icon": "📋",
+        "section": "Sidebar → Finding Context",
+        "title": "Setting the Finding Context",
+        "body": (
+            "Before entering any text, configure the <b>Finding Context</b> in the left sidebar. "
+            "These four fields tell the model exactly what kind of control is being audited:<br><br>"
+            "<b>• Control Domain</b> — the type of IT control:<br>"
+            "&nbsp;&nbsp;– <em>PAM</em> = Privileged Access Management (who has admin rights)<br>"
+            "&nbsp;&nbsp;– <em>NJL</em> = New Joiners &amp; Leavers (access when staff join/leave)<br>"
+            "&nbsp;&nbsp;– <em>CM</em> = Change Management (how code/config changes are approved)<br>"
+            "&nbsp;&nbsp;– <em>BR</em> = Backup &amp; Restoration (data backup processes)<br><br>"
+            "<b>• Application</b> — the specific system involved (SAP, Oracle, etc.)<br>"
+            "<b>• Industry</b> — the client's industry (affects benchmark comparison)<br>"
+            "<b>• Application Type</b> — ERP or non-ERP"
+        ),
+        "tip": "The model was trained on data from all four control domains, so selecting the correct domain is critical for an accurate score.",
+    },
+    {
+        "icon": "🔗",
+        "section": "Sidebar → IT Dependency",
+        "title": "IT Dependency Context",
+        "body": (
+            "The <b>IT Dependency</b> section captures how deeply the affected system is embedded "
+            "in the client's financial reporting process.<br><br>"
+            "<b>Financial Processes Dependent</b> — how many key financial processes run through "
+            "this system? More processes = higher exposure if something goes wrong.<br><br>"
+            "<b>Interface / Integration Type</b> — how does this system connect to others?<br>"
+            "&nbsp;&nbsp;– <em>Direct DB access</em> carries the most risk<br>"
+            "&nbsp;&nbsp;– <em>API integration</em> is moderate risk<br>"
+            "&nbsp;&nbsp;– <em>Standard reports / manual export</em> carry the least<br><br>"
+            "The tool automatically calculates a <b>score adjustment</b> (shown live below the "
+            "dropdowns) and adds it to the base model score."
+        ),
+        "tip": "A Direct DB access connection on a system with 5+ financial processes can add up to +13.5 points to the final risk score.",
+    },
+    {
+        "icon": "🌐",
+        "section": "Sidebar → Client Environment",
+        "title": "Client Environment Profile",
+        "body": (
+            "The <b>Client Environment</b> section captures three dimensions of the client's "
+            "technical environment that affect inherent risk:<br><br>"
+            "<b>• Deployment Model</b> — On-premise, Cloud, or Hybrid. Cloud and Hybrid "
+            "environments may introduce additional exposure through shared responsibility models.<br><br>"
+            "<b>• System Age</b> — Legacy systems (10+ years old) are harder to patch and "
+            "often lack modern security controls. Newer systems carry lower inherent risk.<br><br>"
+            "<b>• Audit Scope</b> — Single entity vs. multi-entity (group audit). A wider scope "
+            "amplifies the potential blast radius of any control weakness.<br><br>"
+            "The <b>live risk chip</b> (e.g., 'High Environment Risk +8 pts') shows the combined "
+            "impact of all three selections in real time."
+        ),
+        "tip": "Environment adjustments range from −4 to +14 points and are applied on top of the IT dependency adjustment.",
+    },
+    {
+        "icon": "💰",
+        "section": "Sidebar → Financial Context",
+        "title": "Financial Context & Materiality",
+        "body": (
+            "The <b>Financial Context</b> section links the IT finding to the financial audit:<br><br>"
+            "<b>Financial Impact Type</b> — does this control weakness directly affect financial "
+            "statements, or only the underlying IT infrastructure? A direct financial impact "
+            "is significantly more serious.<br><br>"
+            "<b>Materiality Level</b> — the audit's quantitative materiality threshold for this "
+            "client. A finding that is material to a small company may be immaterial at a large one.<br><br>"
+            "The combination of these two inputs maps to a <b>severity classification</b> "
+            "(e.g., 'Significant Deficiency') and may escalate the PwC Priority level by one step."
+        ),
+        "tip": "Financial context only adjusts the priority level — it does not change the 0–100 risk score itself.",
+    },
+    {
+        "icon": "🔁",
+        "section": "Sidebar → Prior Year Context",
+        "title": "Prior Year & Repeat Findings",
+        "body": (
+            "If this same control weakness was identified in a <b>previous year's audit</b>, "
+            "toggle on <em>'Prior year finding'</em> and select the priority it was assigned then.<br><br>"
+            "Repeat findings are treated more seriously in audit standards because management "
+            "was already notified and had the opportunity to remediate — yet the weakness persists.<br><br>"
+            "The scorer automatically <b>escalates the priority by one level</b> "
+            "(e.g., P3 → P2) for repeat findings, reflecting this increased audit significance."
+        ),
+        "tip": "Repeat findings at P1 cannot escalate further — P1 is already the highest priority (Critical).",
+    },
+    {
+        "icon": "✍️",
+        "section": "Main Area → Input",
+        "title": "Entering a Finding",
+        "body": (
+            "The two main text fields are the core of the scorer:<br><br>"
+            "<b>Observation</b> — describe what you <em>found</em> during testing. Be factual "
+            "and specific: mention the system, the number of exceptions, what the evidence showed, "
+            "and whether any exceptions had real-world impact (e.g., post-termination logins).<br><br>"
+            "<b>Risk Statement</b> — describe the <em>risk</em> that the observation creates. "
+            "What could go wrong? Who is affected? How likely is exploitation?<br><br>"
+            "Both fields are read by Claude Haiku AI, which extracts 10 semantic risk signals "
+            "from your free-text. The richer the input, the more accurate the score."
+        ),
+        "tip": "Use the Quick Examples below the text boxes to see how high, medium, and low severity findings are typically written.",
+    },
+    {
+        "icon": "⚡",
+        "section": "Main Area → Scoring",
+        "title": "Scoring the Finding",
+        "body": (
+            "Once you've filled in the context (sidebar) and entered the finding text, click "
+            "<b>Score This Finding</b>.<br><br>"
+            "The scoring pipeline runs in two phases:<br>"
+            "<b>Phase 1 — Claude Haiku (AI)</b>: reads your observation and risk statement and "
+            "extracts 10 semantic signals such as whether a violation was confirmed, whether "
+            "data was directly at risk, and the AI's own severity estimate.<br><br>"
+            "<b>Phase 2 — XGBoost Model</b>: combines the AI signals with your structured "
+            "inputs (domain, application, industry, etc.), predicts a Low / Medium / High class "
+            "with probabilities, then converts these to a continuous 0–100 score.<br><br>"
+            "Post-model adjustments for IT dependency, environment, and financial materiality "
+            "are then layered on top."
+        ),
+        "tip": "The full pipeline typically takes 3–6 seconds — most of the time is the Claude Haiku API call for semantic extraction.",
+    },
+    {
+        "icon": "📊",
+        "section": "Results → Risk Score",
+        "title": "Understanding the Risk Score & Priority",
+        "body": (
+            "The main output is a <b>0–100 Risk Score</b>, grouped into four bands:<br>"
+            "<b>🔴 Critical ≥75</b> — Immediate partner escalation required<br>"
+            "<b>🟠 High 55–74</b> — Urgent remediation; include in management letter<br>"
+            "<b>🟡 Medium 35–54</b> — Address within 30 days<br>"
+            "<b>🟢 Low &lt;35</b> — Monitor and track<br><br>"
+            "Each band maps to a <b>PwC Priority (P1–P5)</b>. The interactive pip-scale below "
+            "the score highlights your finding's priority and shows the exact audit guidance "
+            "(sign-off requirements, escalation steps, management response obligations).<br><br>"
+            "The three-step <b>priority chain</b> shows how each adjustment layer affected the "
+            "final priority: Base → Financial Adj → Prior Year Escalation."
+        ),
+        "tip": "Click on any step in the priority chain to see what triggered that adjustment.",
+    },
+    {
+        "icon": "🤖",
+        "section": "Results → AI Signals",
+        "title": "LLM Semantic Signals & Cyber Risk Flags",
+        "body": (
+            "Two sections explain what the AI 'read' from your text:<br><br>"
+            "<b>Cyber Risk Flags</b> (keyword-based) — six binary flags detected from specific "
+            "audit terms: Unauthorised Access, Data Loss, Privilege Escalation, No Logging, "
+            "Weak Credentials, and Quantity Finding (e.g., '8 out of 20 cases').<br><br>"
+            "<b>LLM Semantic Signals</b> — ten scores extracted by Claude Haiku from the "
+            "full free-text. These capture nuance that keywords alone can't:<br>"
+            "&nbsp;&nbsp;– <em>Violation Rate</em>: how many exceptions were found?<br>"
+            "&nbsp;&nbsp;– <em>Finding Confirmed</em>: was the issue actually verified?<br>"
+            "&nbsp;&nbsp;– <em>Compensating Control</em>: is there a mitigating control?<br>"
+            "&nbsp;&nbsp;– <em>SoD Conflict</em>: is there a segregation of duties issue?<br>"
+            "&nbsp;&nbsp;– <em>Evidence Strength</em>: how robust is the audit evidence?"
+        ),
+        "tip": "Green dots in the Semantic Signals grid indicate active/elevated signals. Grey dots mean the signal is inactive or neutral.",
+    },
+    {
+        "icon": "🔍",
+        "section": "Results → Explainability",
+        "title": "SHAP Feature Attribution",
+        "body": (
+            "<b>SHAP</b> (SHapley Additive exPlanations) is an industry-standard technique for "
+            "explaining machine-learning predictions. It answers: <em>'Which features pushed "
+            "the score up or down, and by how much?'</em><br><br>"
+            "The bar chart shows the <b>top 10 features</b> by impact:<br>"
+            "&nbsp;&nbsp;– <b>Blue bars →</b> pushed the score <em>higher</em> (increased risk)<br>"
+            "&nbsp;&nbsp;– <b>Red bars →</b> pushed the score <em>lower</em> (reduced risk)<br>"
+            "&nbsp;&nbsp;– Longer bars = more influence<br><br>"
+            "This makes every score <b>fully auditable</b> — you can always justify the rating "
+            "by pointing to the specific features the model weighted most heavily."
+        ),
+        "tip": "SHAP values are calculated independently for every finding — the same observation in different contexts may produce different explanations.",
+    },
+    {
+        "icon": "📈",
+        "section": "Results → Benchmark",
+        "title": "Industry Benchmark Panel",
+        "body": (
+            "The benchmark panel compares your finding against <b>historical audit data</b> "
+            "from the same control domain and industry.<br><br>"
+            "Key metrics shown:<br>"
+            "&nbsp;&nbsp;– <b>Percentile rank</b>: e.g., 'Top 15% most severe' means this "
+            "finding scores higher than 85% of similar historical findings<br>"
+            "&nbsp;&nbsp;– <b>Delta vs industry average</b>: how many points above/below the mean<br>"
+            "&nbsp;&nbsp;– <b>P25 / P75 / P90</b>: the distribution of scores in this segment<br><br>"
+            "This helps auditors contextualise findings — a score of 60 might be typical "
+            "for PAM findings in Financial Services, but unusually high in Retail."
+        ),
+        "tip": "Benchmarks are based on 977 scored findings across 20 domain × industry combinations from the training dataset.",
+    },
+    {
+        "icon": "🛠️",
+        "section": "Results → Remediation",
+        "title": "Remediation Roadmap",
+        "body": (
+            "The <b>Remediation Roadmap</b> provides 3–5 targeted, actionable recommendations "
+            "based on the specific combination of domain, active flags, and priority level.<br><br>"
+            "Each action card shows:<br>"
+            "&nbsp;&nbsp;– <b>Action title</b> and detailed description<br>"
+            "&nbsp;&nbsp;– <b>Feasibility</b>: Quick Win, Medium Effort, or Strategic<br>"
+            "&nbsp;&nbsp;– <b>Timeline</b>: how long the remediation typically takes<br><br>"
+            "Recommendations are deterministic and domain-specific — PAM findings get access "
+            "management actions, CM findings get change control actions, and so on. "
+            "Cross-domain actions (e.g., escalation procedures for Critical findings) are added "
+            "automatically when relevant."
+        ),
+        "tip": "For P1 and P2 findings, the roadmap will always include an escalation or immediate remediation action.",
+    },
+    {
+        "icon": "✅",
+        "section": "Results → Sign-off",
+        "title": "Sign-off Readiness Checklist",
+        "body": (
+            "For <b>P1 and P2 findings</b>, the <em>Sign-off Readiness</em> section appears "
+            "with a context-driven checklist that the auditor must complete before the "
+            "engagement can be signed off.<br><br>"
+            "Checklist items vary based on: priority level, whether it's a repeat finding, "
+            "financial materiality, and whether compensating controls exist. Examples:<br>"
+            "&nbsp;&nbsp;– Management action plan with named owner and target date<br>"
+            "&nbsp;&nbsp;– Evidence of re-testing (if compensating controls are claimed)<br>"
+            "&nbsp;&nbsp;– Partner notification documented in the engagement file<br>"
+            "&nbsp;&nbsp;– Formal escalation if a prior-year finding is still unresolved<br><br>"
+            "A <b>live progress bar</b> tracks how many checklist items have been completed."
+        ),
+        "tip": "Sign-off checklist items are saved per scoring session. Completing items here does not update any external system.",
+    },
+    {
+        "icon": "💬",
+        "section": "Results → AI Chat",
+        "title": "Ask AI — Deep-dive Chat",
+        "body": (
+            "Click <b>Ask AI</b> below any result to open an AI-powered chat window. "
+            "The assistant is fully briefed on your specific finding — the score, all SHAP "
+            "drivers, LLM signals, financial context, and session history — so you can ask "
+            "natural-language questions without any copy-pasting.<br><br>"
+            "Example questions you can ask:<br>"
+            "&nbsp;&nbsp;– <em>'Why did this score as High rather than Medium?'</em><br>"
+            "&nbsp;&nbsp;– <em>'What is the difference between SoD and access revocation risk?'</em><br>"
+            "&nbsp;&nbsp;– <em>'Draft a management action plan for this finding.'</em><br>"
+            "&nbsp;&nbsp;– <em>'How does this compare to our other findings this session?'</em><br><br>"
+            "The AI responds using <b>PwC audit language</b> and never fabricates information "
+            "not present in the scoring result."
+        ),
+        "tip": "The chat window is tied to the current finding. Scoring a new finding resets the chat so the AI always has the right context.",
+    },
+    {
+        "icon": "⬇️",
+        "section": "Results → Export",
+        "title": "Exporting Results & Session History",
+        "body": (
+            "Every scored finding can be exported as a structured <b>JSON file</b> using the "
+            "Export button. The JSON includes every field: raw score, adjusted score, all "
+            "LLM signals, SHAP values, financial context, and priority chain — "
+            "ready for import into audit management systems or further analysis.<br><br>"
+            "The <b>Session History</b> panel in the left sidebar shows the last five findings "
+            "scored in the current session, with their band and domain, so you can keep track "
+            "of a full engagement's findings side by side.<br><br>"
+            "When two or more findings have been scored, the <b>Control Environment Overview</b> "
+            "section also appears at the bottom, giving a cross-finding risk summary for the "
+            "entire session."
+        ),
+        "tip": "You have now completed the full tour! Click 'End Tour' to start scoring, or use the Quick Examples to try the tool immediately.",
+    },
+]
 
 
 # ── Helper functions ───────────────────────────────────────────────────────────
@@ -2476,6 +2997,81 @@ def render_llm_signals(llm_feats):
     return f'<div class="signal-grid">{items}</div>'
 
 
+# ── Welcome screen ─────────────────────────────────────────────────────────────
+if st.session_state.show_welcome:
+    # Hide sidebar on the welcome screen for a clean first impression
+    st.markdown("""
+    <style>
+      section[data-testid="stSidebar"] { display: none !important; }
+      .block-container { padding-top: 1rem !important; }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="welcome-page">
+      <div class="welcome-logo">🛡️</div>
+      <div class="welcome-badge">DTU × PwC Denmark · Master Thesis s242576</div>
+      <div class="welcome-title">ITGC Cyber Risk Scoring Model</div>
+      <div class="welcome-sub">
+        An AI-powered audit tool that transforms free-text IT findings into transparent,
+        explainable risk scores — so every judgement is data-driven and fully defensible.
+      </div>
+      <div class="welcome-divider"></div>
+      <div class="welcome-features">
+        <div class="welcome-feat-card">
+          <span class="welcome-feat-icon">🤖</span>
+          <div class="welcome-feat-title">Claude Haiku AI Extraction</div>
+          <div class="welcome-feat-desc">Reads your observation and risk statement and extracts 10 semantic risk signals — understanding nuance that simple keywords miss.</div>
+        </div>
+        <div class="welcome-feat-card">
+          <span class="welcome-feat-icon">⚡</span>
+          <div class="welcome-feat-title">XGBoost Risk Model</div>
+          <div class="welcome-feat-desc">A trained machine-learning model combines AI signals with structured audit context to produce a precise 0–100 risk score.</div>
+        </div>
+        <div class="welcome-feat-card">
+          <span class="welcome-feat-icon">🔍</span>
+          <div class="welcome-feat-title">SHAP Explainability</div>
+          <div class="welcome-feat-desc">Every score is fully explained — see exactly which features drove the rating up or down, making each finding fully auditable.</div>
+        </div>
+        <div class="welcome-feat-card">
+          <span class="welcome-feat-icon">📈</span>
+          <div class="welcome-feat-title">Industry Benchmarking</div>
+          <div class="welcome-feat-desc">Compare each finding against 977 historical records across 20 domain × industry combinations to contextualise severity.</div>
+        </div>
+        <div class="welcome-feat-card">
+          <span class="welcome-feat-icon">🛠️</span>
+          <div class="welcome-feat-title">Remediation Roadmap</div>
+          <div class="welcome-feat-desc">Get 3–5 targeted, domain-specific remediation actions with feasibility ratings and implementation timelines.</div>
+        </div>
+        <div class="welcome-feat-card">
+          <span class="welcome-feat-icon">💬</span>
+          <div class="welcome-feat-title">AI Audit Assistant</div>
+          <div class="welcome-feat-desc">Ask the AI anything about your scored finding — it knows the full context and responds in professional PwC audit language.</div>
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # CTA buttons — centered using columns
+    _, c1, gap, c2, _ = st.columns([1.5, 1.2, 0.3, 1.2, 1.5])
+    with c1:
+        if st.button("📖  Start Interactive Tour", use_container_width=True, type="primary"):
+            st.session_state.show_welcome = False
+            st.session_state.tour_active = True
+            st.session_state.tour_step = 0
+            st.rerun()
+    with c2:
+        if st.button("→  Skip tour, open the app", use_container_width=True):
+            st.session_state.show_welcome = False
+            st.rerun()
+
+    st.markdown(
+        '<p class="welcome-cta-hint">You can restart the tour at any time from the sidebar.</p>',
+        unsafe_allow_html=True,
+    )
+    st.stop()  # Do not render the rest of the app on the welcome screen
+
+
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("""
@@ -2656,8 +3252,91 @@ with st.sidebar:
               <div class="hist-item-meta">{h['control_domain']} · {h['observation_snippet'][:40]}...</div>
             </div>""", unsafe_allow_html=True)
 
+    # ── Tour / Help ─────────────────────────────────────────────────────────────
+    st.markdown('<div class="sidebar-section">Help & Guide</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="tour-restart-btn" style="display:none;"></div>',
+        unsafe_allow_html=True,
+    )
+    if st.button("📖  Take the Tour", use_container_width=True, key="sidebar_tour_btn"):
+        st.session_state.tour_active = True
+        st.session_state.tour_step = 0
+        st.rerun()
+    st.markdown(
+        '<div style="font-size:0.72rem;color:#2d4270;margin-top:6px;line-height:1.5;">'
+        '16 steps · covers every feature<br>from scoring to AI chat</div>',
+        unsafe_allow_html=True,
+    )
+
 
 # ── Main content ───────────────────────────────────────────────────────────────
+
+# ── Tour panel ─────────────────────────────────────────────────────────────────
+if st.session_state.tour_active:
+    _total   = len(TOUR_STEPS)
+    _idx     = min(st.session_state.tour_step, _total - 1)
+    _step    = TOUR_STEPS[_idx]
+    _pct     = round((_idx + 1) / _total * 100)
+
+    # Dot indicators (show up to 15; for readability collapse into groups if more)
+    _dots_html = ""
+    for _d in range(_total):
+        if _d < _idx:
+            _cls = "tour-dot done"
+        elif _d == _idx:
+            _cls = "tour-dot active"
+        else:
+            _cls = "tour-dot"
+        _dots_html += f'<div class="{_cls}"></div>'
+
+    st.markdown(f"""
+    <div class="tour-panel">
+      <div class="tour-header">
+        <div class="tour-step-badge">
+          <div class="tour-step-num">Step {_idx + 1} of {_total}</div>
+          <div class="tour-section-tag">{_step['section']}</div>
+        </div>
+      </div>
+      <div class="tour-progress-bar">
+        <div class="tour-progress-fill" style="width:{_pct}%;"></div>
+      </div>
+      <div class="tour-title">{_step['icon']}&nbsp; {_step['title']}</div>
+      <div class="tour-body">{_step['body']}</div>
+      <div class="tour-tip">
+        <span class="tour-tip-icon">💡</span>
+        <span>{_step['tip']}</span>
+      </div>
+      <div class="tour-nav" style="margin-top:16px;">
+        <div class="tour-dots">{_dots_html}</div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Navigation buttons — Streamlit renders these below the HTML card
+    _nav_prev, _nav_next, _nav_end, _ = st.columns([1, 1, 1.2, 3])
+    with _nav_prev:
+        _prev_disabled = (_idx == 0)
+        if st.button("← Previous", disabled=_prev_disabled, key="tour_prev", use_container_width=True):
+            st.session_state.tour_step = max(0, _idx - 1)
+            st.rerun()
+    with _nav_next:
+        _is_last = (_idx == _total - 1)
+        _next_label = "Finish Tour ✓" if _is_last else "Next →"
+        if st.button(_next_label, key="tour_next", use_container_width=True, type="primary"):
+            if _is_last:
+                st.session_state.tour_active = False
+                st.session_state.tour_step = 0
+            else:
+                st.session_state.tour_step = _idx + 1
+            st.rerun()
+    with _nav_end:
+        if st.button("✕  End Tour", key="tour_end", use_container_width=True):
+            st.session_state.tour_active = False
+            st.session_state.tour_step = 0
+            st.rerun()
+
+    st.markdown("<div style='margin-bottom:8px;'></div>", unsafe_allow_html=True)
+
 st.markdown("""
 <div class="hero">
   <div class="hero-badge">DTU × PwC Denmark · Master Thesis s242576</div>
